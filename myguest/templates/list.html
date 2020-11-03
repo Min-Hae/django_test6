@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	** 방명록 글 **
+	<!--  <a href="insert/">자료 추가</a> 아래와 같은 경ㄹ-->
+	<a href="/guest/insert/">자료 추가</a>
+	<p />
+	<table border="1">
+		<tr>
+			<th>아이디</th>
+			<th>글 제목</th>
+			<th>글 내용</th>
+			<th>등록일</th>
+		</tr>
+
+		{%if gdatas%} 
+		  {%for g in gdatas%}
+		  <tr>
+		    <td>{{g.id}}</td>
+		    <td>{{g.title}}</td>
+		    <td>{{g.content}}</td>
+		    <td>{{g.regdate}}</td>
+		  </tr> 
+		 {% endfor %} 
+		{% else %}
+		
+		<tr>
+			<td colspan="4" style="text-align: center;">자료가 없어요</td>
+		</tr>
+		{% endif %}
+
+	</table>
+</body>
+</html>
